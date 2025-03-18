@@ -1,0 +1,58 @@
+/*
+Theme Name: StoryWeaver
+Theme URI: https://themeforest.net/user/artisndesigns
+Author: ArtisnDesigns
+Author URI: https://themeforest.net/user/artisndesigns
+Description: A premium storytelling WordPress theme with immersive layouts, voice narration, and advanced features by ArtisnDesigns.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, storytelling, responsive, elementor, voice-narration, premium
+Text Domain: storyweaver
+Domain Path: /languages
+*/
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #f9f9f9; color: #333; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+header { background-color: #1a1a1a; color: #fff; padding: 20px 0; position: sticky; top: 0; z-index: 1000; }
+header .container { display: flex; justify-content: space-between; align-items: center; }
+header h1 a { color: #fff; text-decoration: none; }
+nav ul { list-style: none; display: flex; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: #fff; text-decoration: none; transition: color 0.3s; }
+nav ul li a:hover { color: #ff6f61; }
+.hamburger { display: none; cursor: pointer; }
+.hamburger div { width: 25px; height: 3px; background-color: #fff; margin: 5px 0; }
+.hero { background: url('../images/hero-bg.jpg') no-repeat center/cover; padding: 100px 0; text-align: center; color: #fff; position: relative; }
+.hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
+.hero h2 { position: relative; z-index: 1; font-size: 48px; margin-bottom: 20px; }
+main { padding: 40px 0; }
+.story-card { background: #fff; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s, box-shadow 0.3s; }
+.story-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+.story-card h2 a { color: #333; text-decoration: none; }
+.narration-btn { display: inline-block; padding: 10px 20px; background: #ff6f61; color: #fff; border: none; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+.narration-btn:hover { background: #e65b50; }
+body.dark-mode { background: #1a1a1a; color: #ddd; }
+body.dark-mode .story-card { background: #2c2c2c; }
+body.dark-mode .story-card h2 a { color: #ddd; }
+.theme-toggle { display: inline-block; width: 60px; height: 34px; position: relative; }
+.theme-toggle input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: 0.4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: 0.4s; border-radius: 50%; }
+input:checked + .slider { background-color: #ff6f61; }
+input:checked + .slider:before { transform: translateX(26px); }
+footer { background: #1a1a1a; color: #fff; text-align: center; padding: 20px 0; }
+@media (max-width: 768px) {
+    header .container { flex-direction: column; }
+    nav { display: none; width: 100%; }
+    nav.active { display: block; }
+    nav ul { flex-direction: column; text-align: center; margin-top: 20px; }
+    nav ul li { margin: 10px 0; }
+    .hamburger { display: block; }
+    .hero h2 { font-size: 32px; }
+}
+@media (max-width: 480px) {
+    .hero h2 { font-size: 24px; }
+    .story-card h2 { font-size: 18px; }
+}
